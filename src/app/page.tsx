@@ -15,7 +15,7 @@ export default function Home() {
       <ul>
         <li>
           <Link href="/api/public-route"><button>/api/public-route</button></Link>
-          <p>should work all the time and either return the user id or 'no user' in the message</p>
+          <p>should work all the time and either return the user id or no user in the message</p>
         </li>
         <li>
           <Link href="/api/protected-route"><button>/api/protected-route</button></Link>
