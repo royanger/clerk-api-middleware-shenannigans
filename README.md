@@ -1,5 +1,13 @@
 # API routes with Clerk
 
+## Deployed on Vercel
+
+* https://clerk-api-middleware-shenannigans.vercel.app/api/public-route
+* https://clerk-api-middleware-shenannigans.vercel.app/api/ignored-route
+* https://clerk-api-middleware-shenannigans.vercel.app/api/protected-route
+* https://clerk-api-middleware-shenannigans.vercel.app/api/protected-route-no-sdk
+
+
 ## Unexpected 404 on API routes problem
 
 1. Put creds in `.env`
