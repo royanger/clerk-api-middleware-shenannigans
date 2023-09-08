@@ -15,6 +15,7 @@ export const config = {
 
 export default authMiddleware({
   debug: false,
-  publicRoutes: ["/api/public-route"],
+  publicRoutes: ["/", "/api/public-route", '/api/protected-by-route'],
   ignoredRoutes: ["/api/ignored-route"],
+  apiRoutes: []
 });
