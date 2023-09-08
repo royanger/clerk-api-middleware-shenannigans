@@ -1,11 +1,11 @@
-import { auth } from '@clerk/nextjs'
-import { NextResponse } from 'next/server'
+import { getAuth } from '@clerk/nextjs/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function GET() {
-  const user = auth()
+export async function GET(req: NextRequest) {
+  const user = getAuth(req)
 
   if (!user.userId) {
-    return new Response('User not logged in', { status: 401 })
+    return NextResponse.json({ route: 'This is a fake 401' })
   }
 
   return NextResponse.json({ route: `Protected Route with Auth - ${user?.userId ? user.userId : 'No user'}` })

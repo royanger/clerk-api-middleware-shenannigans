@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import { UserButton, SignedIn, SignedOut } from '@clerk/nextjs'
+import { UserButton, SignedIn, SignedOut, auth } from '@clerk/nextjs'
 import Link from 'next/link'
+import FetchComponent from './FetchComponent'
 
-export default function Home() {
+export default async function Home() {
+  const { getToken } = auth()
+  const token = await getToken()
   return (
     <main className={styles.main}>
       <SignedIn>
@@ -34,6 +37,10 @@ export default function Home() {
           <p>always works, never any userId or auth info</p>
         </li>
       </ul>
+      <div>
+        <p>Fetch below</p>
+        <FetchComponent token={token} />
+      </div>
     </main>
   )
 }
